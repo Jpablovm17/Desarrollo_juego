@@ -1,0 +1,262 @@
+:root{
+    --blanco: #ffffff;
+    --negro: #212121;
+    --amarillo: #ffc107;
+    --azul: #0097a7;
+    --gris: #757575;
+    --rojo: #a7392f;
+    --grisclaro: #4a4a4a;
+    --hueso: #e3dac9;
+    --grisoscuro: #2f2f2f;
+    --nuevo: #2f2f2f;            /*De esta forma se crean todos los colores del proyecto */
+}
+html{
+    font-size: 62.5%;               /*Tamano de todo el texto */
+    box-sizing: border-box;         /* Asi se neutraliza el efecto caja para tener pixeles en tamano real */
+    scroll-snap-type: y mandatory;  /*Asi se activa el scroll de 3 puntos y tambien porque el sitio es vertical */
+}
+*, *:before, *:after {
+  box-sizing: inherit;               /*Segunda parte del modelo caja, recordar que es para neutralizar */
+}
+body{
+    font-size: 16px;                    /*Asi se reinician los pixeles siempre */
+    font-family: "Amaranth", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    background-image: linear-gradient(to top, var(--gris) 0%, var(--blanco) 98%);  /* Asi se genera el degradado en el fondo o background */
+}
+
+
+/* TITULOS */
+h1{
+    font-size: 4.5rem;   /* Tamano del texto principal */
+}
+h2{
+    font-size: 2.8rem;  
+}
+h3{
+    font-size: 1.8rem;   
+}
+h1,h2,h3{
+    text-align: center;  /* Asi se centran todos los textos */
+}
+
+
+/* SCROLL */                         /* Se genera 3 parones en cada uno de estos puntos */
+
+
+
+/* NAVEGACION */
+
+.nav-bg{         /*Clase de utilidada para el espacio total de la navegacion */
+    background-color: var(--nuevo);
+}
+.contenedor{        /* Contenedor solo para centrar la navegacion */
+    max-width: 120rem;  /* Tamano del ancho */
+    margin: 0 auto;
+}
+.navegacion-principal{   /*Navegacion principal */
+    display: flex;
+    flex-direction: column;   /*Se hace que por defecto sea columna */
+    
+}
+@media (min-width: 768px){    /*Se crea mq para la navegacion */
+    .navegacion-principal{    
+        flex-direction: row;  /*Llegado a ese tamano se muestra todo vertical */
+        justify-content: space-between; /*Aca se da el tipo de separacion en el texto del nav */
+    }
+}
+.navegacion-principal a{
+    display: block;
+    text-align: center; /*Se centra el texto de la navegacion en ese tamano */
+    color: var(--hueso);   /* Color letra */
+    text-decoration: none;  /* Se quita linea de abajo por defecto */
+    font-size: 2rem;      /* Tamano letra */
+    font-weight: bold;      /* Negrita */
+    padding: 0.9rem;
+}
+.navegacion-principal a:hover{   /*Se crea clase para cuando se coloque el mouse arriba del nav */
+    background-color: var(--azul);
+    color: var(--negro);
+}
+
+
+/* TITULO PARTE INICIAL */
+
+.hero{
+    background-image: url(../imagenes/principal.jpg); /*Se agrega imagen*/
+    background-repeat: no-repeat; /*Hacemos que la imagen no se repita por defecto */ 
+    background-size: cover;  /* Tamano de la imagen */
+    height: 300px;
+    position: relative; /*Para posicionar la traparencia sobre el texto debo volver relativo el padre*/
+}
+.contenido-hero{
+    position: absolute; /*Luego vuelvo absoluto el hijo ya que va a estra arriba del padre*/
+    background-color: rgb(0 0 0 / 68%);   /*Asi se da trasparencia*/
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  /* Con este bloque de codigo se puede aliner vertical y horizontalmente */
+}
+.contenido-hero h1,
+.contenido-hero p {
+    color: var(--hueso);
+}
+
+/* Sombra Main */
+
+.sombra{
+    -webkit-box-shadow: -1px 0px 9px -1px rgba(0,0,0,0.46);  /*Aca se coloca la sobra de los bordes*/
+    -moz-box-shadow: -1px 0px 9px -1px rgba(0,0,0,0.46);
+    box-shadow: -1px 0px 9px -1px rgba(0,0,0,0.46);
+    
+}
+
+/* Servicios Main */
+.contenedor1{
+    max-width: 120rem;  /* Tamano del ancho */
+    margin: 0 auto;
+    background-color: var(--blanco);
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 2rem;
+}
+
+.servicios{
+    display: grid;                              /* Se activa el GRID */
+    grid-template-columns: 33.3% 33.3% 33.3%; 
+    /* Se da tamano a las columnas tambien se puede cambiar por row para las filas */
+    column-gap: 1rem;  /* Asi se da tamano entre cada cuadro */
+    padding-right: 2rem;
+   
+}
+.servicio{
+    display: flex;
+    flex-direction: column;   /* Aca se centra cada circulo */
+    align-items: center;
+}
+.servicio h3{
+    color: var(--azul);
+    font-weight: bold;
+}
+.servicio p{
+    line-height: 2;     /* Estilos del texto */
+    text-align: center;
+}
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--amarillo);   /* Se le da estilos a los iconos */
+    border-radius: 50%;
+    color: #0097a7;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.contenedor1 p{
+    text-align: center;     /* Se centra el texto que dice medellin, antioquia */
+}
+
+
+
+
+/* Boton */
+
+.boton{
+    background-color: var(--grisoscuro);  /* Color de fondo */
+    color: var(--hueso);           /* Color de texto */
+    text-decoration: none;          /* Quitar linea de abajo del texto */
+    padding: 12px 16px;             /* Espacio dentro del boton */
+    margin-top: 1rem;               /* Espacio afuera del boton superior */
+    font-size: 1.6rem;                /* Tamano texto */
+    text-transform: uppercase;      /* Volverlo en mayuzcula */
+    font-weight: bold;              /* Negrita en el texto */
+    border-radius: .5rem;           /* Redondear bordes */
+    width: 90%;                     
+    text-align: center;
+    border: none;
+
+    display: block;                 /* El boton deja de ser inline y se vuelve bloque */
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 768px){          /* Cuando se llegue a este tamano se normaliza el botton */
+    .boton{
+        width: auto;
+        display: table;
+    }
+}
+.boton:hover{
+    color: var(--azul);
+    cursor: pointer;
+}
+
+/* FORMULARIO */
+
+.contenedor2{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.formulario{
+    max-width: 120rem;  /* Se hace responsive para celulares y el query pa cuando suba de tamano */
+    margin: 0 auto;
+    background-color: var(--grisclaro);
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 2rem;
+}
+@media (min-width: 768px){          /* Cuando se llegue a este tamano se normaliza el botton */
+    .formulario{
+        background-color: var(--grisclaro); /*Color fondo formulario */
+        width: min(55%, 100%);         /*Toma el ancho mas pequeno entre 60 y el 100 */
+        margin: 0 auto;                /* Se centra */
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+}
+
+.formulario fieldset{
+    border: none;       /* Se quitan los bordes defecto */
+}
+.formulario legend{
+    width: 100%;       /* Por conpatibilidad con cada navegador se debe agregar esto */
+    text-align: center;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--hueso);
+}
+
+.campo{
+    margin-bottom: 1rem;     /* Separacion entre cada campo abajo */
+}
+.campo label{
+    color: var(--blanco);     /* Estilo a la letra dentro del label o titulo */
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+.input-text{
+    width: 100%;  /* Los recuadros de etxtos toman todo el ancho */
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+.enviar .boton{     /* Hace que el boton este al maximo ancho todo el tiempo y se ve mejor */
+    width: 100%;
+}
+
+    
+/* FOOTER */
+
+.footer{
+    text-align: center;
+    color: var(--hueso);
+}
+
+
