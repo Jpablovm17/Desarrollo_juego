@@ -1,0 +1,180 @@
+:root{
+    --blanco: #ffffff;
+    --negro: #212121;
+    --amarillo: #ffc107;
+    --azul: #0097a7;
+    --gris: #757575;
+    --rojo: #a7392f;
+    --grisclaro: #4a4a4a;
+    --hueso: #e3dac9;
+    --grisoscuro: #2f2f2f;
+    --nuevo: #2f2f2f;            /*De esta forma se crean todos los colores del proyecto */
+}
+html{
+    font-size: 62.5%;               /*Tamano de todo el texto */
+    box-sizing: border-box;         /* Asi se neutraliza el efecto caja para tener pixeles en tamano real */
+    /*scroll-snap-type: y mandatory;  /*Asi se activa el scroll de 3 puntos y tambien porque el sitio es vertical */
+}
+*, *:before, *:after {
+  box-sizing: inherit;               /*Segunda parte del modelo caja, recordar que es para neutralizar */
+}
+
+body {
+    font-size: 16px;
+    font-family: "Amaranth", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    background-color: var(--grisoscuro);
+    margin: 0;
+    min-height: 100vh;
+}
+
+
+/* TITULOS */
+h1{
+    font-size: 4.5rem;                /* Tamano del texto principal */
+}
+h2{
+    font-size: 2.8rem;  
+}
+h3{
+    font-size: 1.8rem;   
+}
+h1,h2,h3{
+    text-align: center;               /* Asi se centran todos los textos */
+}
+
+/* SCROLL */
+
+
+/* NAVEGACION PRINCIPAL */
+
+.nav-bg{                              /*Clase de utilidada para el espacio total de la navegacion, color del nav */
+    background-color: var(--nuevo);
+    
+}
+.navegacion-principal{                /*Navegacion principal aca no era necesario crear contenedores, todo esto en pantalla pequena */
+    display: flex;
+    flex-direction: column;   
+    align-items: center;              /*Se centra el texto como se quiere*/
+    padding-right: 2rem;              /*Se le da espacio a la derecha al texto mas pequeno*/
+    padding-bottom: 2rem;
+    gap: 1.5rem;
+}
+@media (min-width: 768px){            /*Se crea mq para la navegacion al crecer a un pc*/
+    .navegacion-principal{    
+        flex-direction: row;          /*Llegado a ese tamano se muestra todo vertical */
+        justify-content: space-between; /*Aca se da el tipo de separacion en el texto del nav */
+        align-items: center;         /*Con esto se hace que todos los <a> se evayan abajo del todo*/
+        padding-top: 1.3rem;
+        padding-right: 25rem;         /* Se nutraliza el espacio a la derecha cuando se suba a laptop*/
+        padding-bottom: 0;
+        padding-left: 4rem;
+    }
+}
+
+.navegacion-principal a{              /*Estilos para las letras*/
+    display: flex;
+    align-items: center;
+    text-align: center;               /*Se centra el texto de la navegacion en ese tamano */
+    color: var(--hueso);              /* Color letra */
+    text-decoration: none;            /* Se quita linea de abajo por defecto */
+    font-size: 2rem;                /* Tamano letra */
+    font-weight: bold;                /* Negrita */
+}
+.navegacion-principal a:hover,
+.navegacion-principal a.activo{        /*Se crea clase para cuando se coloque el mouse arriba del nav */
+    color: var(--rojo);              /*color de la letra*/
+    border-bottom: 3px solid var(--rojo);
+}
+
+
+/* LOGO */
+
+.logo1{
+    width: 12rem;
+    height: auto;
+    border-radius: 100%;
+}
+
+
+
+/* SECCIÓN DE LOS COMENTARIOS */
+
+.seccion-codigo {
+    padding: 5rem 2rem;
+    background-color: var(--grisoscuro);
+    color: var(--hueso);
+}
+
+.contenedor-codigo {
+    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.contenedor-codigo h2 {
+    font-size: 3.5rem;
+    color: var(--hueso);
+    margin-bottom: 2rem;
+}
+
+.descripcion-codigo {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+
+/* BLOQUE PARA MOSTRAR LOS COMENTARIOS */
+
+.bloque-codigo {
+    background-color: #161616;
+    border: 1px solid #555555;
+    border-radius: 1rem;
+    padding: 2rem;
+    overflow-x: auto;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+}
+
+.bloque-codigo pre {
+    margin: 0;
+    white-space: pre;
+}
+
+.bloque-codigo code {
+    font-family: monospace;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #a5d6a7;
+}
+
+
+/* DISEÑO PARA DISPOSITIVOS PEQUEÑOS */
+
+@media (max-width: 767px) {
+    #escena3d {
+        height: 450px;
+    }
+
+    .seccion-codigo {
+        padding: 3rem 1.5rem;
+    }
+
+    .contenedor-codigo h2 {
+        font-size: 3rem;
+    }
+
+    .descripcion-codigo {
+        font-size: 1.6rem;
+    }
+
+    .bloque-codigo {
+        padding: 1.5rem;
+    }
+
+    .bloque-codigo code {
+        font-size: 1.3rem;
+    }
+}

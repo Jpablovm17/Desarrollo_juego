@@ -102,3 +102,99 @@ h1,h2,h3{
     height: 700px;
     background: #1b1b1b;
 }
+
+
+
+/* SECCIÓN DEL JUEGO */
+
+.seccion-juego {
+    width: 100%;
+    background-color: var(--negro);
+}
+
+#escena3d {
+    width: 100%;
+    height: 700px;
+    background-color: #1b1b1b;
+}
+
+
+/* SECCIÓN DEL CÓDIGO */
+
+.seccion-codigo {
+    padding: 5rem 2rem;
+    background-color: var(--grisoscuro);
+    color: var(--hueso);
+}
+
+.contenedor-codigo {
+    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.contenedor-codigo h2 {
+    font-size: 3.5rem;
+    color: var(--hueso);
+    margin-bottom: 2rem;
+}
+
+.descripcion-codigo {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+
+/* BLOQUE PARA MOSTRAR EL CÓDIGO */
+
+.bloque-codigo {
+    background-color: #161616;
+    border: 1px solid #555555;
+    border-radius: 1rem;
+    padding: 2rem;
+    overflow-x: auto;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+}
+
+.bloque-codigo pre {
+    margin: 0;
+    white-space: pre;
+}
+
+.bloque-codigo code {
+    font-family: monospace;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #a5d6a7;
+}
+
+
+/* DISEÑO PARA DISPOSITIVOS PEQUEÑOS */
+
+@media (max-width: 767px) {
+    #escena3d {
+        height: 450px;
+    }
+
+    .seccion-codigo {
+        padding: 3rem 1.5rem;
+    }
+
+    .contenedor-codigo h2 {
+        font-size: 3rem;
+    }
+
+    .descripcion-codigo {
+        font-size: 1.6rem;
+    }
+
+    .bloque-codigo {
+        padding: 1.5rem;
+    }
+
+    .bloque-codigo code {
+        font-size: 1.3rem;
+    }
+}

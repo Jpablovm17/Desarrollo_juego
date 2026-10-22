@@ -1,0 +1,144 @@
+:root{
+    --blanco: #ffffff;
+    --negro: #212121;
+    --amarillo: #ffc107;
+    --azul: #0097a7;
+    --gris: #757575;
+    --rojo: #a7392f;
+    --grisclaro: #4a4a4a;
+    --hueso: #e3dac9;
+    --grisoscuro: #2f2f2f;
+    --nuevo: #2f2f2f;            /*De esta forma se crean todos los colores del proyecto */
+}
+html{
+    font-size: 62.5%;               /*Tamano de todo el texto */
+    box-sizing: border-box;         /* Asi se neutraliza el efecto caja para tener pixeles en tamano real */
+}
+*, *:before, *:after {
+  box-sizing: inherit;               /*Segunda parte del modelo caja, recordar que es para neutralizar */
+}
+body{
+    font-size: 16px;                 /*Asi se reinician los pixeles siempre */
+    font-family: "Amaranth", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    background-image: linear-gradient(to top, var(--grisclaro) 100%, var(--blanco) 0%);  /* Asi se genera el degradado en el fondo o background */
+}
+
+
+/* TITULOS */
+h1{
+    font-size: 4.5rem;                /* Tamano del texto principal */
+}
+h2{
+    font-size: 2.8rem;  
+}
+h3{
+    font-size: 1.8rem;   
+}
+h1,h2,h3{
+    text-align: center;               /* Asi se centran todos los textos */
+}
+
+/* SCROLL */
+
+
+/* NAVEGACION PRINCIPAL */
+
+.nav-bg{                              /*Clase de utilidada para el espacio total de la navegacion, color del nav */
+    background-color: var(--nuevo);
+}
+.navegacion-principal{                /*Navegacion principal aca no era necesario crear contenedores, todo esto en pantalla pequena */
+    display: flex;
+    flex-direction: column;   
+    align-items: center;              /*Se centra el texto como se quiere*/
+    padding-right: 2rem;              /*Se le da espacio a la derecha al texto mas pequeno*/
+    padding-bottom: 2rem;
+    gap: 1.5rem;
+}
+@media (min-width: 768px){            /*Se crea mq para la navegacion al crecer a un pc*/
+    .navegacion-principal{    
+        flex-direction: row;          /*Llegado a ese tamano se muestra todo vertical */
+        justify-content: space-between; /*Aca se da el tipo de separacion en el texto del nav */
+        align-items: stretch;         /*Con esto se hace que todos los <a> se estiren para ocupar todo es espacio vertical del contenedor */
+        padding-bottom: 0;
+    }
+}
+.titulo-navegacion{                   /*Estilos para el titulo grande principal del nav en celular*/
+    display: flex;
+    flex-direction: column;   
+    align-items: center;              /*Se centra el texto como se quiere*/
+    padding-right: 2rem;    
+    color: var(--hueso);
+}
+@media (min-width: 768px){            /*Estilos para el titulo grande principal del nav en PC*/
+    .titulo-navegacion{    
+        font-size: 4rem;
+        color: var(--hueso);
+        padding-left: 2rem;
+        padding-right: 10rem;
+      
+    }
+}
+.navegacion-principal a{              /*Estilos para las letras*/
+    display: flex;
+    align-items: center;
+    text-align: center;               /*Se centra el texto de la navegacion en ese tamano */
+    color: var(--hueso);              /* Color letra */
+    text-decoration: none;            /* Se quita linea de abajo por defecto */
+    font-size: 1.6rem;                /* Tamano letra */
+    font-weight: bold;                /* Negrita */
+    padding: 0 0.9rem;
+}
+.navegacion-principal a:hover,
+.navegacion-principal a.activo{        /*Se crea clase para cuando se coloque el mouse arriba del nav */
+    background-color: var(--azul);    /*El contenedor sera de este color*/
+    color: var(--negro);              /*color de la letra*/
+    border-bottom: 3px solid var(--hueso);
+}
+
+
+/*IMAGEN PRINCIPAL*/
+
+.hero2{
+    background-image: url(../imagenes/Imagen\ Hapuch\ 1.png); /*Se agrega imagen de fondo en el main*/
+    background-repeat: no-repeat;                           /*Hacemos que la imagen no se repita por defecto */ 
+    background-size: cover;                                 /* Tamano de la imagen */
+    height: 1100px;                                         /*Alto de la imagen*/
+}
+
+
+/* MAIN */
+
+.contenedor2{
+    max-width: 120rem;  /* Tamano del ancho */
+    margin: 0 auto;
+    background-color: var(--blanco);
+    padding: 2rem;
+    margin-top: 4rem;
+    border-radius: 8rem;
+    text-align: center;
+}
+
+
+/* SOMBRA */
+
+.sombra2{
+    -webkit-box-shadow: 0px -1px 37px 26px rgba(0,0,0,0.82);
+    -moz-box-shadow: 0px -1px 37px 26px rgba(0,0,0,0.82);
+    box-shadow: 0px -1px 37px 26px rgba(0,0,0,0.82);
+}
+
+
+/* FOOTER*/
+
+.footer{
+    text-align: center;
+    color: var(--hueso);
+}
+
+
+
+
+
+
